@@ -32,6 +32,7 @@ class LoginController extends Controller
             'email' => $email,
             'password' => $request->input('password'),
         ];
+        
 
         if (! Auth::attempt($credentials)) {
             RateLimiter::hit($key, 60);
